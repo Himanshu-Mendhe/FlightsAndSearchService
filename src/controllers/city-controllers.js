@@ -76,7 +76,7 @@ const get = async (req,res) => {
         return res.status(500).json({
             data: {},
             sucess: false,
-            message: "not able to delete a city",
+            message: "not able to fetch a city",
             err: error
         })
     }
