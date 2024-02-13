@@ -50,7 +50,6 @@ class CityRepository {
             console.log("something wrong in city_repository in get city");
             throw{error};
         }
-    };
-
+    }
 }
 module.exports = CityRepository;
