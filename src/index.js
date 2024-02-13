@@ -19,3 +19,4 @@ const setupAndStartServices = async() => {
 }
 
 setupAndStartServices();
+

@@ -7,7 +7,7 @@ const create = async (req,res) =>  {
         const city = await cityService.createCity(req.body);
         return res.status(201).json({
             data: city,
-            sucess: true,
+            success: true,
             message: "sucessfully created a city",
             err: {}
         });
@@ -15,7 +15,7 @@ const create = async (req,res) =>  {
         console.log(error)
         return res.status(500).json({
             data: {},
-            sucess: false,
+            success: false,
             message: "not able to create a city",
             err: error
         })
@@ -27,7 +27,7 @@ const destroy = async (req,res) => {
         const response = await cityService.deleteCity(req.params.id);
         return res.status(200).json({
             data: response,
-            sucess: true,
+            success: true,
             message: "sucessfully deleted a city",
             err: {}
         });
@@ -35,7 +35,7 @@ const destroy = async (req,res) => {
         console.log(error)
         return res.status(500).json({
             data: {},
-            sucess: false,
+            success: false,
             message: "not able to delete a city",
             err: error
         })
@@ -47,7 +47,7 @@ const update = async (req,res) => {
         const response = await cityService.updateCity(req.params.id, req.body);
         return res.status(201).json({
             data: response,
-            sucess: true,
+            success: true,
             message: "sucessfully updated a city",
             err: {}
         });
@@ -55,7 +55,7 @@ const update = async (req,res) => {
         console.log(error)
         return res.status(500).json({
             data: {},
-            sucess: false,
+            success: false,
             message: "not able to update a city",
             err: error
         })
@@ -64,10 +64,10 @@ const update = async (req,res) => {
 
 const get = async (req,res) => {
     try{
-        const response = await cityService.getCity(req.body);
+        const response = await cityService.getCity(req.params.id);
         return res.status(200).json({
             data: response,
-            sucess: true,
+            success: true,
             message: "sucessfully fetched a city",
             err: {}
         });
@@ -75,7 +75,7 @@ const get = async (req,res) => {
         console.log(error)
         return res.status(500).json({
             data: {},
-            sucess: false,
+            success: false,
             message: "not able to fetch a city",
             err: error
         })
