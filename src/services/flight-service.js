@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const {FlightRepository, AirplaneRepository} = require('../repository/index');
 const { compareTime} = require('../utils/helper')
 
@@ -22,8 +23,16 @@ class FlightService{
             throw{error};
         }
     }
-    async getFlightData(){
-        //todo
+     
+    async getAllFlightData(data) {
+        try {
+            const flights = await this.flightRepository.getAllFlight(data);
+            return flights;
+        } catch (error) {
+            console.log("something wrong in flight services in get all");
+            throw{error};
+        }
+
     }
 }
 

@@ -64,7 +64,7 @@ class CityRepository {
                         }
                     }
                 });
-                return cities;
+                return cities; 
             }
             const cities = await City.findAll();
             return cities; 
