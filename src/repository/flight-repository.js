@@ -1,9 +1,9 @@
-const {Flight} = require('../models/index');
+const {Flights} = require('../models/index');
 
 class FlightRepository{
     async createFlight(data){
         try {
-            const flight = await Flight.create(data);
+            const flight = await Flights.create(data);
             return flight;
         } catch (error) {
             console.log("something wrong in flight-repository in create flight");
