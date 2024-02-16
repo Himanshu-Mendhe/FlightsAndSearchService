@@ -10,7 +10,7 @@ class FlightService{
     }
     async createFlight(data) {
         try {
-            if(compareTime(data.arrivalTime,data.departureTime)){
+            if(!compareTime(data.arrivalTime,data.departureTime)){
                 throw{error: 'arrival time should be greater than departure time'}
             }
             const airplane = await this.airplaneRepository.getAirplane(data.airplaneId); //to fetch airplainId from airplan model 
